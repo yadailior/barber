@@ -1,0 +1,31 @@
+{% extends 'homepage/home_page.html' %}
+
+{% block 'home' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'login/css/queue.css' %}">
+<form   method="POST">
+    <div class="container">
+      <h1>Log in</h1>
+      <h3>Please fill in this form to connect</h3>
+      <hr>
+      {% csrf_token %}
+
+  
+      <label ><b>Email</b></label>
+      <input type="text" placeholder="Enter Email"  required>
+
+  
+      <label ><b>Password</b></label>
+      <input type="password" placeholder="Enter Password"  required>
+  
+      <button type="submit" class="registerbtn">Log in</button>
+    </div>
+  
+    <div class="container signin">
+      <p>You do not have an account yet? <a href="{% url 'login:register' %}">Register</a>.</p>
+    </div>
+  </form>
+
+{% endblock 'home' %}
+
+

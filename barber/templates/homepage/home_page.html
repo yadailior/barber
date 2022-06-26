@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'homepage/css/design.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,1000&display=swap" rel="stylesheet">
+    <script src="{% static 'homepage/js/home.js' %}"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbershop- Ran hasin מספרת גברים - מספרה בחדרה</title>
+</head>
+<body class="backg">
+
+    <div class="topnav">
+
+        <a class="active" href="{% url 'homepage:home' %}" ><i class="bi bi-house-fill"></i></a>
+
+        <a href="{% url 'login:register' %}">התחבר/הירשם</a>
+    
+        <div class="topnav-right">
+
+            <button class="openbtn" onclick="openNav()">☰</button> 
+            
+            <a href=""><i class="bi bi-facebook"></i></a>
+            
+            <a href="https://www.instagram.com/ranhasin/"><i class="bi bi-instagram"></i></a>
+           
+            <a href="https://wa.me/972548352202"><i class="bi bi-whatsapp"></i></a>
+            
+            <div id="panel" class="sidepanel">
+                
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+                
+                <a href="{% url 'appointment:queue' %}">קבע תור עכשיו</a>
+                
+                <a href="{% url 'contact:contact' %}">צור קשר</a>
+                
+                <a href="{% url 'gallery:gallery' %}">גלריה</a></div>
+                
+            </div>
+
+        </div> 
+
+      
+        {% block 'home' %}
+        
+        <div>
+            <br>
+            <br>
+            <br>
+            
+            <div class="info">
+            
+                <h1 style="margin-bottom: 12.0pt; text-align: center;"><span ><strong><span style="color: rgb(255, 255, 255);">  Ran Hasin - Barbershop </span></strong></span></h1>
+            
+                <p style="margin-bottom: 12.0pt; text-align: center;"><span style="font-size: 18pt;"><strong><span style="color: rgb(255, 255, 255);">שעות פעילות המספרה  </span></strong></span></p>
+            
+                <p style="text-align: center;"><span style="font-size: 18pt; color: rgb(255, 255, 255);">&nbsp;א'-ה': 20:00-9:00  </span></p>
+            
+                <p style="text-align: center;"><span style="font-size: 18pt; color: rgb(255, 255, 255);">יום ו': 14:00-8:00  </span></p></div>
+            
+                <p style="text-align: center;"><span style="font-size: 18pt; color: rgb(255, 255, 255);"></span></p>
+            
+                <p style="text-align: center;"></p>
+        
+    </div>
+
+      {% endblock 'home' %}
+
+</body>
+</html>
